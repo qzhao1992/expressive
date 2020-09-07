@@ -5,10 +5,9 @@
  * @license   https://github.com/zendframework/zend-diactoros/blob/master/LICENSE.md New BSD License
  */
 
-declare(strict_types=1);
-
 namespace Zend\Diactoros;
 
+use InvalidArgumentException;
 use Psr\Http\Message\UploadedFileInterface;
 
 use function is_array;
@@ -19,10 +18,11 @@ use function is_array;
  * Transforms each value into an UploadedFile instance, and ensures that nested
  * arrays are normalized.
  *
+ * @param array $files
  * @return UploadedFileInterface[]
- * @throws Exception\InvalidArgumentException for unrecognized values
+ * @throws InvalidArgumentException for unrecognized values
  */
-function normalizeUploadedFiles(array $files) : array
+function normalizeUploadedFiles(array $files)
 {
     /**
      * Traverse a nested tree of uploaded file specifications.
@@ -40,7 +40,7 @@ function normalizeUploadedFiles(array $files) : array
         array $errorTree,
         array $nameTree = null,
         array $typeTree = null
-    ) use (&$recursiveNormalize) : array {
+    ) use (&$recursiveNormalize) {
         $normalized = [];
         foreach ($tmpNameTree as $key => $value) {
             if (is_array($value)) {
@@ -79,12 +79,12 @@ function normalizeUploadedFiles(array $files) : array
      * @param array $files
      * @return UploadedFile[]
      */
-    $normalizeUploadedFileSpecification = function (array $files = []) use (&$recursiveNormalize) : array {
+    $normalizeUploadedFileSpecification = function (array $files = []) use (&$recursiveNormalize) {
         if (! isset($files['tmp_name']) || ! is_array($files['tmp_name'])
             || ! isset($files['size']) || ! is_array($files['size'])
             || ! isset($files['error']) || ! is_array($files['error'])
         ) {
-            throw new Exception\InvalidArgumentException(sprintf(
+            throw new InvalidArgumentException(sprintf(
                 '$files provided to %s MUST contain each of the keys "tmp_name",'
                 . ' "size", and "error", with each represented as an array;'
                 . ' one or more were missing or non-array values',
@@ -123,7 +123,7 @@ function normalizeUploadedFiles(array $files) : array
             continue;
         }
 
-        throw new Exception\InvalidArgumentException('Invalid value in files specification');
+        throw new InvalidArgumentException('Invalid value in files specification');
     }
     return $normalized;
 }

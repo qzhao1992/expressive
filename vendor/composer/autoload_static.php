@@ -10,6 +10,7 @@ class ComposerStaticInit8fe90cf7d0b50aa6d04dd331f2fa4162
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
+        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         'cf97c57bfe0f23854afd2f3818abb7a0' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/functions/create_uploaded_file.php',
         '9bf37a3d0dad93e29cb4e1b1bfab04e9' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/functions/marshal_headers_from_sapi.php',
         'ce70dccb4bcc2efc6e94d2ee526e6972' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/functions/marshal_method_from_sapi.php',
@@ -18,7 +19,6 @@ class ComposerStaticInit8fe90cf7d0b50aa6d04dd331f2fa4162
         '0b0974a5566a1077e4f2e111341112c1' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/functions/normalize_server.php',
         '1ca3bc274755662169f9629d5412a1da' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/functions/normalize_uploaded_files.php',
         '40360c0b9b437e69bcbb7f1349ce029e' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/functions/parse_cookie_header.php',
-        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
         'e69f7f6ee287b969198c3c9d6777bd38' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/bootstrap.php',
         '0d59ee240a4cd96ddbb4ff164fccea4d' => __DIR__ . '/..' . '/symfony/polyfill-php73/bootstrap.php',
@@ -27,7 +27,9 @@ class ComposerStaticInit8fe90cf7d0b50aa6d04dd331f2fa4162
         '968cb91a78f08ea033c0e1afe256c864' => __DIR__ . '/..' . '/zendframework/zend-stratigility/src/functions/host.php',
         '73f02b5e05532acfb968fa91193a3d17' => __DIR__ . '/..' . '/zendframework/zend-stratigility/src/functions/middleware.php',
         '7ba36b1c7d480f53d620df374623203a' => __DIR__ . '/..' . '/zendframework/zend-stratigility/src/functions/path.php',
+        '7e9bd612cc444b3eed788ebbe46263a0' => __DIR__ . '/..' . '/laminas/laminas-zendframework-bridge/src/autoload.php',
         '253c157292f75eb38082b5acb06f3f01' => __DIR__ . '/..' . '/nikic/fast-route/src/functions.php',
+        'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
         'f0e119a83772115c43c01dd050fd77a8' => __DIR__ . '/..' . '/zendframework/zend-expressive/src/constants.php',
     );
 
@@ -41,11 +43,14 @@ class ComposerStaticInit8fe90cf7d0b50aa6d04dd331f2fa4162
             'Zend\\Stratigility\\' => 18,
             'Zend\\Stdlib\\' => 12,
             'Zend\\ServiceManager\\' => 20,
+            'Zend\\Hydrator\\' => 14,
             'Zend\\HttpHandlerRunner\\' => 23,
             'Zend\\Expressive\\Tooling\\' => 24,
             'Zend\\Expressive\\Template\\' => 25,
             'Zend\\Expressive\\Router\\' => 23,
             'Zend\\Expressive\\Helper\\' => 23,
+            'Zend\\Expressive\\Hal\\' => 20,
+            'Zend\\Expressive\\Authorization\\' => 30,
             'Zend\\Expressive\\' => 16,
             'Zend\\EventManager\\' => 18,
             'Zend\\Escaper\\' => 13,
@@ -73,14 +78,38 @@ class ComposerStaticInit8fe90cf7d0b50aa6d04dd331f2fa4162
             'Symfony\\Component\\String\\' => 25,
             'Symfony\\Component\\Console\\' => 26,
         ),
+        'R' => 
+        array (
+            'Ramsey\\Uuid\\Doctrine\\' => 21,
+            'Ramsey\\Uuid\\' => 12,
+            'Ramsey\\Collection\\' => 18,
+        ),
         'P' => 
         array (
             'Psr\\Log\\' => 8,
+            'Psr\\Link\\' => 9,
             'Psr\\Http\\Server\\' => 16,
             'Psr\\Http\\Message\\' => 17,
             'Psr\\Container\\' => 14,
             'Prophecy\\' => 9,
             'PackageVersions\\' => 16,
+        ),
+        'N' => 
+        array (
+            'Negotiation\\' => 12,
+        ),
+        'M' => 
+        array (
+            'Mezzio\\Authentication\\OAuth2\\' => 29,
+            'Mezzio\\Authentication\\' => 22,
+        ),
+        'L' => 
+        array (
+            'Login\\' => 6,
+            'League\\OAuth2\\Server\\' => 21,
+            'League\\Event\\' => 13,
+            'Lcobucci\\JWT\\' => 13,
+            'Laminas\\ZendFrameworkBridge\\' => 28,
         ),
         'I' => 
         array (
@@ -88,6 +117,7 @@ class ComposerStaticInit8fe90cf7d0b50aa6d04dd331f2fa4162
         ),
         'F' => 
         array (
+            'Firebase\\JWT\\' => 13,
             'Fig\\Http\\Message\\' => 17,
             'FastRoute\\' => 10,
         ),
@@ -104,14 +134,20 @@ class ComposerStaticInit8fe90cf7d0b50aa6d04dd331f2fa4162
             'Doctrine\\Common\\Cache\\' => 22,
             'Doctrine\\Common\\Annotations\\' => 28,
             'Doctrine\\Common\\' => 16,
+            'Defuse\\Crypto\\' => 14,
             'DeepCopy\\' => 9,
         ),
         'C' => 
         array (
             'ContainerInteropDoctrine\\' => 25,
         ),
+        'B' => 
+        array (
+            'Brick\\Math\\' => 11,
+        ),
         'A' => 
         array (
+            'Auth\\' => 5,
             'App\\' => 4,
             'AppTest\\' => 8,
             'Announcements\\' => 14,
@@ -137,6 +173,10 @@ class ComposerStaticInit8fe90cf7d0b50aa6d04dd331f2fa4162
         array (
             0 => __DIR__ . '/..' . '/zendframework/zend-servicemanager/src',
         ),
+        'Zend\\Hydrator\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zendframework/zend-hydrator/src',
+        ),
         'Zend\\HttpHandlerRunner\\' => 
         array (
             0 => __DIR__ . '/..' . '/zendframework/zend-httphandlerrunner/src',
@@ -157,6 +197,14 @@ class ComposerStaticInit8fe90cf7d0b50aa6d04dd331f2fa4162
         'Zend\\Expressive\\Helper\\' => 
         array (
             0 => __DIR__ . '/..' . '/zendframework/zend-expressive-helpers/src',
+        ),
+        'Zend\\Expressive\\Hal\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zendframework/zend-expressive-hal/src',
+        ),
+        'Zend\\Expressive\\Authorization\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zendframework/zend-expressive-authorization/src',
         ),
         'Zend\\Expressive\\' => 
         array (
@@ -238,9 +286,25 @@ class ComposerStaticInit8fe90cf7d0b50aa6d04dd331f2fa4162
         array (
             0 => __DIR__ . '/..' . '/symfony/console',
         ),
+        'Ramsey\\Uuid\\Doctrine\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/ramsey/uuid-doctrine/src',
+        ),
+        'Ramsey\\Uuid\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/ramsey/uuid/src',
+        ),
+        'Ramsey\\Collection\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/ramsey/collection/src',
+        ),
         'Psr\\Log\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
+        ),
+        'Psr\\Link\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/link/src',
         ),
         'Psr\\Http\\Server\\' => 
         array (
@@ -249,8 +313,7 @@ class ComposerStaticInit8fe90cf7d0b50aa6d04dd331f2fa4162
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-factory/src',
-            1 => __DIR__ . '/..' . '/psr/http-message/src',
+            0 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Container\\' => 
         array (
@@ -264,9 +327,45 @@ class ComposerStaticInit8fe90cf7d0b50aa6d04dd331f2fa4162
         array (
             0 => __DIR__ . '/..' . '/ocramius/package-versions/src/PackageVersions',
         ),
+        'Negotiation\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/willdurand/negotiation/src/Negotiation',
+        ),
+        'Mezzio\\Authentication\\OAuth2\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/mezzio/mezzio-authentication-oauth2/src',
+        ),
+        'Mezzio\\Authentication\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/mezzio/mezzio-authentication/src',
+        ),
+        'Login\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/Login/src',
+        ),
+        'League\\OAuth2\\Server\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/league/oauth2-server/src',
+        ),
+        'League\\Event\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/league/event/src',
+        ),
+        'Lcobucci\\JWT\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/lcobucci/jwt/src',
+        ),
+        'Laminas\\ZendFrameworkBridge\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laminas/laminas-zendframework-bridge/src',
+        ),
         'Interop\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/container-interop/container-interop/src/Interop/Container',
+        ),
+        'Firebase\\JWT\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/firebase/php-jwt/src',
         ),
         'Fig\\Http\\Message\\' => 
         array (
@@ -323,6 +422,10 @@ class ComposerStaticInit8fe90cf7d0b50aa6d04dd331f2fa4162
             2 => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Common',
             3 => __DIR__ . '/..' . '/doctrine/reflection/lib/Doctrine/Common',
         ),
+        'Defuse\\Crypto\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/defuse/php-encryption/src',
+        ),
         'DeepCopy\\' => 
         array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
@@ -330,6 +433,14 @@ class ComposerStaticInit8fe90cf7d0b50aa6d04dd331f2fa4162
         'ContainerInteropDoctrine\\' => 
         array (
             0 => __DIR__ . '/..' . '/dasprid/container-interop-doctrine/src',
+        ),
+        'Brick\\Math\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/brick/math/src',
+        ),
+        'Auth\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/Auth/src',
         ),
         'App\\' => 
         array (

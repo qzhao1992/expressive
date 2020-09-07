@@ -12,7 +12,8 @@ declare(strict_types=1);
 return [
     'dependencies' => [
         'factories' => [
-            Announcements\Handler\AnnouncementsReadHandler::class => Announcements\Handler\AnnouncementsReadHandlerFactory::class,
+            Auth\Handler\LoginHandler::class => Auth\Handler\LoginHandlerFactory::class,
+            Login\Handler\LoginHandler::class => Login\Handler\LoginHandlerFactory::class,
         ],
     ],
 ];

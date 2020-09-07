@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Announcements\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Ramsey\Uuid\Uuid;
 
 /**
  * https://www.doctrine-project.org/projects/doctrine-orm/en/2.6/reference/basic-mapping.html
@@ -16,11 +17,12 @@ use Doctrine\ORM\Mapping as ORM;
  class Announcement{
 
     /**
-     * @var integer $id
+     * @var Uuid
      *
      * @ORM\Id
-     * @ORM\Column(type="integer", name="id", nullable=false)
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\Column(type="uuid", unique=true)
+     * @ORM\GeneratedValue(strategy="CUSTOM")
+     * @ORM\CustomIdGenerator(class="Ramsey\Uuid\Doctrine\UuidGenerator")
      */
     protected $id;
 
@@ -40,6 +42,11 @@ use Doctrine\ORM\Mapping as ORM;
     protected $is_active;
 
     /**
+     * @ORM\Column(type="integer", nullable=false)
+     */
+    protected $is_admin;
+
+    /**
      * @ORM\Column(type="datetime", nullable=false)
      */
     protected $created;
@@ -49,11 +56,37 @@ use Doctrine\ORM\Mapping as ORM;
      */
     protected $modified;
 
+    /**
+     * @param array $requestBody
+     * 
+     */
+    public function setAnnouncement(array $requestBody): void
+    {
+        $this->setSort($requestBody['sort']);
+        $this->setContent($requestBody['content']);
+        $this->setModified(new \DateTime("now"));
+
+        if (!isset($requestBody['is_active']))
+        {
+            $this->setIsActive(1);
+        } else {
+            $this->setIsActive($requestBody['is_active']);
+        }
+
+        if (!isset($requestBody['is_admin']))
+        {
+            $this->setIsAdmin(1);
+        } else {
+            $this->setIsActive($requestBody['is_admin']);
+        }
+    }
+
+
 
     /**
-     * @return int
+     * @return Uuid
      */
-    public function getId(): int
+    public function getId(): Uuid
     {
         return $this->id;
     }
@@ -118,7 +151,7 @@ use Doctrine\ORM\Mapping as ORM;
      * @param \DateTime $created
      * @throws \Exception
      */
-    public function setCreated(\DateTime $created = null): void
+    public function setCreated(\DateTime $created ): void
     {
         if (!$created && empty($this->getId())) {
             $this->created = new \DateTime("now");
@@ -147,4 +180,23 @@ use Doctrine\ORM\Mapping as ORM;
             $this->modified = $modified;
         }
     }
+
+    /**
+     * @return int
+     */ 
+    public function getIsAdmin(): int
+    {
+        return $this->is_admin;
+    }
+
+    /**
+     * @param int $is_active
+     *
+     * 
+     */ 
+    public function setIsAdmin($is_admin): void
+    {
+        $this->is_admin = $is_admin;
+    }
+
  }
